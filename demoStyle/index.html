@@ -11,6 +11,7 @@
 		</header>
 		<section id="chatWrapper">
 			<div id="chatHolder">
+				<!--
 				<div class="bubbleWrap-left">
 					<div class="textBubble">
 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, sem vel eleifend luctus, quam urna lobortis sem, auctor porta urna urna vitae justo. Nullam quis auctor felis.</p>
@@ -71,6 +72,7 @@
 						<p>Author: Choveka</p>
 					</div>
 				</div>
+				-->
 			</div>
 			<form id="chatForm">
 				<textarea name="inputBox" placeholder="Напиши нещо..."></textarea>
@@ -78,18 +80,36 @@
 			</form>
 		</section>
 		<script>
+			var user = prompt("Enter your username!");
+			
 			//Focus on the input box;
 			window.onload = ()=>{
 				document.getElementsByName("inputBox")[0].focus();
 			};
 			
-			var chatForm = document.getElementById("chatForm"), inputBox = document.getElementsByName("inputBox")[0], inputSend = document.getElementsByName("inputSend")[0];
+			var chatHolder = document.getElementById("chatHolder"), chatForm = document.getElementById("chatForm"), inputBox = document.getElementsByName("inputBox")[0], inputSend = document.getElementsByName("inputSend")[0];
 			
 			chatForm.addEventListener("submit", e => { e.preventDefault() });
 			
 			inputBox.addEventListener("input", e => { 
 				if(e.target.scrollHeight > 150){ return false; } 
 				chatForm.style.height = e.target.scrollHeight + "px"; });
+				
+			inputSend.addEventListener("click", () => {
+				if(inputBox.value != ""){
+					Chat(inputBox.value);
+					inputBox.value = "";
+				}else{
+					return false;
+				}
+			});
+			
+			inputBox.addEventListener("keydown", e => { 
+				if(e.keyCode == 13){
+					Chat(inputBox.value);
+					inputBox.value = "";
+				}
+			});
 			
 			
 			
@@ -98,6 +118,25 @@
 				let elem = document.getElementsByName("inputBox")[0];
 				
 				console.log("Scroll: " + elem.scrollTop + " Scroll height: " + elem.scrollHeight + " Client height: " + elem.clientHeight);
+			}
+			
+			function Chat(txt){
+				let holder = document.createElement("div");
+				let txtWrap = document.createElement("div");
+				let txtContent = document.createElement("p");
+				let author = document.createElement("p");
+				
+				holder.setAttribute("class", "bubbleWrap-right");
+				txtWrap.setAttribute("class", "textBubble");
+				txtContent.textContent = txt;
+				author.textContent = user;
+				
+				txtWrap.appendChild(txtContent);
+				txtWrap.appendChild(author);
+				
+				holder.appendChild(txtWrap);
+				
+				chatHolder.appendChild(holder);
 			}
 		</script>
 	</body>
