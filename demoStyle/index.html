@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Interface Project</title>
+		<link rel="stylesheet" type="text/css" href="style/style.css">
+	</head>
+	<body>
+		<header>
+			<h2>Bota 01</h2>
+		</header>
+		<section id="chatWrapper">
+			<div id="chatHolder">
+				<div class="bubbleWrap-left">
+					<div class="textBubble">
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, sem vel eleifend luctus, quam urna lobortis sem, auctor porta urna urna vitae justo. Nullam quis auctor felis.</p>
+						<p>Author: Compa</p>
+					</div>
+				</div>
+				<div class="bubbleWrap-right">
+					<div class="textBubble">
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, sem vel eleifend luctus, quam urna lobortis sem, auctor porta urna urna vitae justo. Nullam quis auctor felis.</p>
+						<p>Author: Choveka</p>
+					</div>
+				</div>
+				<div class="bubbleWrap-left">
+					<div class="textBubble">
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, sem vel eleifend luctus, quam urna lobortis sem, auctor porta urna urna vitae justo. Nullam quis auctor felis.</p>
+						<p>Author: Compa</p>
+					</div>
+				</div>
+				<div class="bubbleWrap-right">
+					<div class="textBubble">
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, sem vel eleifend luctus, quam urna lobortis sem, auctor porta urna urna vitae justo. Nullam quis auctor felis.</p>
+						<p>Author: Choveka</p>
+					</div>
+				</div>
+				<div class="bubbleWrap-left">
+					<div class="textBubble">
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, sem vel eleifend luctus, quam urna lobortis sem, auctor porta urna urna vitae justo. Nullam quis auctor felis.</p>
+						<p>Author: Compa</p>
+					</div>
+				</div>
+				<div class="bubbleWrap-right">
+					<div class="textBubble">
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, sem vel eleifend luctus, quam urna lobortis sem, auctor porta urna urna vitae justo. Nullam quis auctor felis.</p>
+						<p>Author: Choveka</p>
+					</div>
+				</div>
+				<div class="bubbleWrap-left">
+					<div class="textBubble">
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, sem vel eleifend luctus, quam urna lobortis sem, auctor porta urna urna vitae justo. Nullam quis auctor felis.</p>
+						<p>Author: Compa</p>
+					</div>
+				</div>
+				<div class="bubbleWrap-right">
+					<div class="textBubble">
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, sem vel eleifend luctus, quam urna lobortis sem, auctor porta urna urna vitae justo. Nullam quis auctor felis.</p>
+						<p>Author: Choveka</p>
+					</div>
+				</div>
+				<div class="bubbleWrap-left">
+					<div class="textBubble">
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, sem vel eleifend luctus, quam urna lobortis sem, auctor porta urna urna vitae justo. Nullam quis auctor felis.</p>
+						<p>Author: Compa</p>
+					</div>
+				</div>
+				<div class="bubbleWrap-right">
+					<div class="textBubble">
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, sem vel eleifend luctus, quam urna lobortis sem, auctor porta urna urna vitae justo. Nullam quis auctor felis.</p>
+						<p>Author: Choveka</p>
+					</div>
+				</div>
+			</div>
+			<form id="chatForm">
+				<textarea name="inputBox" placeholder="Напиши нещо..."></textarea>
+				<button name="inputSend">&#xf1d8;</button>
+			</form>
+		</section>
+		<script>
+			//Focus on the input box;
+			window.onload = ()=>{
+				document.getElementsByName("inputBox")[0].focus();
+			};
+			
+			var chatForm = document.getElementById("chatForm");
+			
+			chatForm.addEventListener("submit", e => { e.preventDefault() });
+		</script>
+	</body>
+</html> 
