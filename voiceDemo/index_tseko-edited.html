@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+  	<head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="">
+      <meta name="author" content="Our Code World">
+
+      <link rel="stylesheet" href="style.css" type="text/css">
+
+      <title>Botut</title>
+
+      <!-- Don't forget to add artyom to your document in the head tag-->
+
+      <script src="artyom.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  	</head>
+
+	<body>
+		<header>
+			<h2>Bota 01</h2>
+		</header>
+		
+		<section id="chatWrapper">
+			<div id="chatHolder">
+				<!--<div class="bubbleWrap-left">
+					<div class="textBubble">
+						<p></p>
+						<p>Author: Compa</p>
+					</div>
+				</div>
+				<div class="bubbleWrap-right">
+					<div class="textBubble">
+						<p></p>
+						<p>Author: Choveka</p>
+					</div>
+				</div>-->
+			</div>
+
+			<form id="chatForm">
+				<textarea name="inputBox" placeholder="Напиши нещо..."></textarea>
+				<button name="inputMic" id="inputMic" onclick="startArtyom()">&#xf131;</button> <!-- &#xf130; -->
+				<button name="inputSend" id="inputSend" onclick="">&#xf1d8;</button>
+			</form>
+		</section>
+		<script>
+			window.onload = ()=>{
+				document.getElementsByName("inputBox")[0].focus();
+			};
+			
+			var chatForm = document.getElementById("chatForm"), inputBox = document.getElementsByName("inputBox")[0], inputSend = document.getElementsByName("inputSend")[0];
+			
+			chatForm.addEventListener("submit", e => { e.preventDefault() });
+			
+			inputBox.addEventListener("input", e => { 
+				if(e.target.scrollHeight > 150){ return false; } 
+				chatForm.style.height = e.target.scrollHeight + "px"; });
+			
+			
+			
+			//Just testing something :)
+			function tellScroll(){
+				let elem = document.getElementsByName("inputBox")[0];
+				
+				console.log("Scroll: " + elem.scrollTop + " Scroll height: " + elem.scrollHeight + " Client height: " + elem.clientHeight);
+			}
+		</script>
+
+		<script>
+		    var userDialogueArray = [];
+		    var numberOfUserInputs = 0;
+		    var computerDialogueArray = [];
+		    var numberOfComputerInputs = 0;
+
+		    var wrapperSection = document.getElementById("chatWrapper");
+			var holderDiv = document.getElementById("chatHolder");
+
+		   
+		    // Now we add the most important point of the plugin, the commands
+		    // This library is very flexible and now we will see why :
+		    // Every command is a literal object
+		    var endingLine = "";
+		    artyom.addCommands([
+	        {
+	            description:"Artyom can talk too, lets say something if we say hello",
+	            indexes:["hello","hey"],
+	            action:function(i){
+		            // i = the index of the array of indexes option
+
+		            if(i == 0){
+			            //You say : "hello"
+			            //document.getElementById('time').innerHTML = "Hello ! How are you? I don't want to talk today";
+			            //document.getElementById('user-computer-dialogue-lines').innerHTML += "Hello ! How are you? I don't want to talk today" + endingLine;
+			            //document.getElementById('computer-dialogue-lines').innerHTML = "Hello ! How are you? I don't want to talk today" + endingLine;
+			            createComputerDialogueBox("Hello ! How are you? I don't want to talk today" + endingLine);
+		            }
+	          	}
+	        },
+	        {
+	          	description:"Say goodbye",
+	          	indexes:["goodbye"],
+	          	action:function(){
+	            	alert("Now all is over.");
+	          	}
+	        },
+	        {
+	          	description:"If we want a really long answer",
+	            indexes:["give me a lot of text"],
+	            action:function(i){
+		            // i = the index of the array of indexes option
+
+		            if(i == 0){
+			            createComputerDialogueBox("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, sem vel eleifend luctus, quam urna lobortis sem, auctor porta urna urna vitae justo. Nullam quis auctor felis.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, sem vel eleifend luctus, quam urna lobortis sem, auctor porta urna urna vitae justo. Nullam quis auctor felis.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, sem vel eleifend luctus, quam urna lobortis sem, auctor porta urna urna vitae justo. Nullam quis auctor felis.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, sem vel eleifend luctus, quam urna lobortis sem, auctor porta urna urna vitae justo. Nullam quis auctor felis.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, sem vel eleifend luctus, quam urna lobortis sem, auctor porta urna urna vitae justo. Nullam quis auctor felis.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, sem vel eleifend luctus, quam urna lobortis sem, auctor porta urna urna vitae justo. Nullam quis auctor felis.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, sem vel eleifend luctus, quam urna lobortis sem, auctor porta urna urna vitae justo. Nullam quis auctor felis.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, sem vel eleifend luctus, quam urna lobortis sem, auctor porta urna urna vitae justo. Nullam quis auctor felis.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, sem vel eleifend luctus, quam urna lobortis sem, auctor porta urna urna vitae justo. Nullam quis auctor felis.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, sem vel eleifend luctus, quam urna lobortis sem, auctor porta urna urna vitae justo. Nullam quis auctor felis.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, sem vel eleifend luctus, quam urna lobortis sem, auctor porta urna urna vitae justo. Nullam quis auctor felis.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, sem vel eleifend luctus, quam urna lobortis sem, auctor porta urna urna vitae justo. Nullam quis auctor felis.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, sem vel eleifend luctus, quam urna lobortis sem, auctor porta urna urna vitae justo. Nullam quis auctor felis.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, sem vel eleifend luctus, quam urna lobortis sem, auctor porta urna urna vitae justo. Nullam quis auctor felis.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, sem vel eleifend luctus, quam urna lobortis sem, auctor porta urna urna vitae justo. Nullam quis auctor felis.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, sem vel eleifend luctus, quam urna lobortis sem, auctor porta urna urna vitae justo. Nullam quis auctor felis." + endingLine);
+		            }
+	        	}	
+	        },
+	        {
+	          	description: "Smart command, say how much x in what we say",
+	          	indexes:["what's the number of *"],
+	          	smart:true,
+	          	action:function(i,wildcard){
+		            //document.getElementById('time').innerHTML = "The number of " + wildcard + ' is '+ Math.floor(Math.random() * 4000) + 1;
+		            //document.getElementById('user-computer-dialogue-lines').innerHTML += "The number of " + wildcard + ' is '+ Math.floor(Math.random() * 4000) + 1 + endingLine;
+		            createComputerDialogueBox("The number of " + wildcard + ' is '+ Math.floor(Math.random() * 4000) + 1 + endingLine);
+		            //document.getElementById('computer-dialogue-lines').innerHTML = "The number of " + wildcard + ' is '+ Math.floor(Math.random() * 4000) + 1 + endingLine;
+		        }
+	        }
+      		]);
+
+
+	        // Redirect the recognized text
+	        artyom.redirectRecognizedTextOutput(function(text,isFinal){
+		        var span = document.getElementById('output');
+
+		        var userDialogue = document.getElementById('user-computer-dialogue-lines');
+		        //var userDialogue = document.getElementById('user-dialogue-lines');
+
+		        if(isFinal){
+		          // span.innerHTML += "<br><hr><br>";
+		          // userDialogue.innerHTML += text;
+		          // userDialogue.innerHTML += "<br><br>";
+		         	var bubbleWrapperDiv = document.createElement("div");             
+					bubbleWrapperDiv.classList.add('bubbleWrap-right'); 
+
+					var textBubbleDiv = document.createElement("div");
+					textBubbleDiv.classList.add('textBubble');                       
+					var textP = document.createElement("p"); 
+					var textChat = document.createTextNode(text);      
+					textP.appendChild(textChat);
+					textBubbleDiv.appendChild(textP);
+
+					var authorP =  document.createElement("p");
+					var textAuthor = document.createTextNode("Author: User"); 
+					authorP.appendChild(textAuthor);
+					textBubbleDiv.appendChild(authorP);
+					                           
+					bubbleWrapperDiv.appendChild(textBubbleDiv);                          	              
+					holderDiv.appendChild(bubbleWrapperDiv);
+		        } else {
+		          // span.innerHTML = text;
+		        }
+	        });
+
+	      	function startArtyom(){
+	        	artyom.initialize({
+	          		lang:"en-GB",// More languages are documented in the library
+	          		continuous:false,//if you have https connection, you can activate continuous mode
+	          		debug:true,//Show everything in the console
+	          		listen:true // Start listening when this function is triggered
+	       		});
+	        	//document.getElementById('microphone-button').src = 'images/microphone-active.png';
+	        	//document.getElementById('microphone-button').onclick = stopArtyom; 
+	        	document.getElementById('inputMic').innerHTML = '&#xf130;';
+	        	document.getElementById('inputMic').onclick = stopArtyom; 
+	      	}
+
+	      	function stopArtyom(){
+	        	artyom.fatality();
+	        	//document.getElementById('microphone-button').src = 'images/microphone-inactive.png';
+	        	//document.getElementById('microphone-button').onclick = startArtyom;
+	        	document.getElementById('inputMic').innerHTML = '&#xf131';
+	        	document.getElementById('inputMic').onclick = startArtyom;
+	     	}
+
+	     	function createComputerDialogueBox(compText) {
+	     		setTimeout(
+			    function() {
+			    	var bubbleWrapperDiv = document.createElement("div");             
+					bubbleWrapperDiv.classList.add('bubbleWrap-left'); 
+
+					var textBubbleDiv = document.createElement("div");
+					textBubbleDiv.classList.add('textBubble');                       
+					var textP = document.createElement("p"); 
+					var textChat = document.createTextNode(compText);      
+					textP.appendChild(textChat);
+					textBubbleDiv.appendChild(textP);
+
+					var authorP =  document.createElement("p");
+					var textAuthor = document.createTextNode("Author: Computer"); 
+					authorP.appendChild(textAuthor);
+					textBubbleDiv.appendChild(authorP);
+						                           
+					bubbleWrapperDiv.appendChild(textBubbleDiv);                          	              
+					holderDiv.appendChild(bubbleWrapperDiv);
+			    }, Math.floor((Math.random() * 3000) + 1000));	
+	     	}
+
+	      	window.onload = function(){
+	         //  	var tab = document.getElementById("commands-list");
+	         //  	var commands =  artyom.getAvailableCommands();
+	         //  	var html = '';
+
+	         //  	for(var i = 0;i < commands.length;i++){
+	         //    	var command = commands[i];
+	         //    	html += command.description + " : <span style='color:blue;'>"+command.indexes.toString()+"</span><br>";
+	         //  	}
+
+	         //  	tab.innerHTML = html;
+
+	          	artyom.initialize({lang:"es-ES"});
+
+	        	// var vocesitas = [
+		        //     {lang:"es-ES",description: "Espanol"},
+		        //     {lang:"de-DE",description: "Deutsch"},
+		        //     {lang:"pt-PT",description: "Portugues"},
+		        //     {lang:"it-IT",description: "Italiano"}
+	       		//  ];
+
+	        	// vocesitas.forEach(function(voice){
+	        	//     $('#select-voice').append($('<option>', {value:voice.lang, text:voice.description}));
+	        	// });
+	      	};
+
+
+    </script>
+	</body>
+</html> 
