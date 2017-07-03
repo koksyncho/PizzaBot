@@ -83,9 +83,22 @@
 				document.getElementsByName("inputBox")[0].focus();
 			};
 			
-			var chatForm = document.getElementById("chatForm");
+			var chatForm = document.getElementById("chatForm"), inputBox = document.getElementsByName("inputBox")[0], inputSend = document.getElementsByName("inputSend")[0];
 			
 			chatForm.addEventListener("submit", e => { e.preventDefault() });
+			
+			inputBox.addEventListener("input", e => { 
+				if(e.target.scrollHeight > 150){ return false; } 
+				chatForm.style.height = e.target.scrollHeight + "px"; });
+			
+			
+			
+			//Just testing something :)
+			function tellScroll(){
+				let elem = document.getElementsByName("inputBox")[0];
+				
+				console.log("Scroll: " + elem.scrollTop + " Scroll height: " + elem.scrollHeight + " Client height: " + elem.clientHeight);
+			}
 		</script>
 	</body>
 </html> 
