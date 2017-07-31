@@ -1,0 +1,219 @@
+/* Reset */
+
+body, header, section, footer, div, h1, h2, h3, p, form, textarea, button{
+	padding: 0;
+	margin: 0;
+}
+
+html{
+	font-size: 62.5%;
+}
+
+/* Font Family Import */
+
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+/*@font-face{font-family:'FontAwesome';src:url('fonts/fontawesome-webfont.eot?v=4.7.0');src:url('fonts/fontawesome-webfont.eot?#iefix&v=4.7.0') format('embedded-opentype'),url('fonts/fontawesome-webfont.woff2?v=4.7.0') format('woff2'),url('fonts/fontawesome-webfont.woff?v=4.7.0') format('woff'),url('fonts/fontawesome-webfont.ttf?v=4.7.0') format('truetype'),url('fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular') format('svg');font-weight:normal;font-style:normal}*/
+
+
+form, textarea, button{
+	border: 0;
+	outline: 0;
+	box-sizing: border-box;
+}
+
+body{
+	font-family: 'Roboto', sans-serif, Arial;
+	background-color: #F5F5F5;
+}
+
+/* Actual Style */
+
+header{
+	position: relative;
+	width: 100%;
+	height: 60px;
+	line-height: 60px;
+	padding: 0 15px;
+	background-color: #e12301; /*#2196F3;*/
+	color: #fff;
+	font-size: 1.6rem;
+	box-shadow: 0 2px 5px 0 rgba(0,0,0, .3);
+	box-sizing: border-box;
+	z-index: 2;
+}
+
+ul{
+	list-style-type: none;
+}
+
+li{
+	display: inline-block;
+}
+
+a{
+	text-decoration: none;
+}
+
+html{
+	font-size: 62.5%;
+}
+
+body{
+	font-family: 'Neucha', cursive;
+}
+
+/* Styling */
+
+nav{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: auto;
+	padding: 1% 2%;
+	background-color: rgba(244,67,54, .7);
+	text-align: right;
+	box-sizing: border-box;
+	z-index: 2;
+}
+
+nav li{
+	margin-left: 20px;
+}
+
+nav a{
+	display: block;
+	padding: 0 25px;
+	line-height: 50px;
+	color: #fff;
+	border-radius: 3px;
+	font-size: 1.6rem;
+}
+
+/* Chat Style */
+
+section{
+	top: 60px;
+	left: 0;
+	position: absolute;
+	width: 100%;
+	height: calc(100% - 60px);
+}
+
+#chatHolder{
+	position: relative;
+	/*top: 10%;*/
+	width: 60%;
+	height: 85%;
+	margin: auto;
+	box-sizing: border-box;
+	overflow-x: hidden;
+}
+
+#chatHolder::-webkit-scrollbar { 
+  /* This is the magic bit */
+  display: none;
+}
+
+.bubbleWrap-left{
+	display: block;
+	width: 100%;
+	margin-top: 15px;
+	text-align: left;
+}
+
+.bubbleWrap-left .textBubble p:nth-of-type(1){
+	background-color: #ff1c1c;
+}
+
+.bubbleWrap-right .textBubble p:nth-of-type(1){
+	background-color: #ce0000;
+}
+
+.bubbleWrap-right{
+	display: block;
+	width: 100%;
+	margin-top: 15px;
+	text-align: right;
+}
+
+.textBubble{
+	display: inline-block;
+	width: calc(50% - 20px);
+}
+
+.textBubble p:nth-of-type(1){
+	width: 100%;
+	height: auto;
+	padding: 5px;
+	line-height: 20px;
+	font-size: 1.5rem;
+	color: #fff;
+	text-align: left;
+	border-radius: 3px;
+}
+
+.textBubble p:nth-of-type(2){
+	margin-top: 5px;
+	font-size: 1.3rem;
+	color: rgba(0,0,0, .4);
+}
+
+/* Form Style */
+
+#chatForm{
+	position: relative;
+	width: 60%;
+	height: 10%;
+	margin: auto;
+	margin-top: 15px;
+}
+
+#chatForm textarea{
+	width: 100%;
+	height: 100%;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+	padding-right: 80px;
+	border-radius: 3px;
+	resize: none;
+	border: 3px solid #ce0000;
+	box-sizing: border-box;
+	font-family: Arial;
+	font-size: 1.5rem;
+}
+
+#chatForm button[name="inputSend"]{
+	position: absolute;
+	top: 0;
+	right: 0;
+	display: block;
+	width: 70px;
+	height: 100%;
+	background-color: #ce0000;
+	color: #fff;
+	font-size: 1.8rem;
+	border-top-right-radius: 3px;
+	border-bottom-right-radius: 3px;
+	z-index: 1;
+	font-family: FontAwesome;
+	cursor: pointer;
+}
+#chatForm button[name="inputMic"]{
+	position: absolute;
+	top: 0;
+	right: 70px;
+	display: block;
+	width: 70px;
+	height: 100%;
+	background-color: #ce0000;
+	color: #fff;
+	font-size: 1.8rem;
+	border-top-right-radius: 3px;
+	border-bottom-right-radius: 3px;
+	z-index: 1;
+	font-family: FontAwesome;
+	cursor: pointer;
+}
