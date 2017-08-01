@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Pizza DEsign</title>
+		<link rel="stylesheet" type="text/css" href="../style/style.css">
+		<script src="../js/jquery-3.2.1.min.js"></script>
+	</head>
+	<body id="loginPage">
+		<nav>
+			<ul>
+				<li>
+					<a href="../index.html" class="active">Начало</a>
+				</li>
+				<li>
+					<a href="#">Меню</a>
+				</li>
+				<li>
+					<a href="#" class="active">Вход/Регистрация</a>
+				</li>
+			</ul>
+		</nav>
+		<div class="formwrapper">
+			<ul>
+				<li>
+					<button id="loginbtn" style="color: #fff; background-color: #F44336;">Вход</button>
+				</li>
+				<li>
+					<button id="registerbtn">Регистрация</button>
+				</li>
+			</ul>
+			<div>
+				<form action="#login.php" method="POST" id="login">
+					<input type="email" name="email" placeholder="Вашата електронна поща">
+					<input type="password" name="password" placeholder="Вашата парола">
+					<input type="submit" name="login" value="Вход">
+				</form>
+				<form action="#register.php" method="POST" id="register">
+					<input type="text" name="fname" placeholder="Име">
+					<input type="text" name="fname" placeholder="Фамилия">
+					<input type="text" name="phone" placeholder="Мобилен телефон">
+					<input type="email" name="email" placeholder="Вашата електронна поща">
+					<p>
+						<label>
+							Мъж
+							<input type="radio" name="sex" value="male">
+						</label>
+						<label>
+							Жена
+							<input type="radio" name="sex" value="female">
+						</label>
+					</p>
+					<input type="password" name="password" placeholder="Вашата парола">
+					<input type="submit" name="login" value="Регистрация">
+				</form>
+			</div>
+		</div>
+		<footer>
+			<p>Всички права запазени!</p>
+		</footer>
+		<script>
+			var loginbtn = $("#loginbtn"),
+				regbtn = $("#registerbtn"),
+				loginForm = $("#login"),
+				regForm = $("#register");
+				
+			loginbtn.on("click", function(){
+				loginbtn.css({color: "#fff", backgroundColor: "#F44336"});
+				regbtn.css({color: "#333", backgroundColor: "#fff"});
+				
+				regForm.fadeOut(function(){
+					loginForm.fadeIn();
+				});
+			});
+			
+			regbtn.on("click", function(){
+				loginbtn.css({color: "#333", backgroundColor: "#fff"});
+				regbtn.css({color: "#fff", backgroundColor: "#F44336"});
+				
+				loginForm.fadeOut(function(){
+					regForm.fadeIn();
+				});
+			});
+		</script>
+	</body>
+</html>

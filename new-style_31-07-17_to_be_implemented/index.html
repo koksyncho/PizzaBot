@@ -1,0 +1,139 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Pizza DEsign</title>
+		<link rel="stylesheet" type="text/css" href="style/style.css">
+		<script src="js/jquery-3.2.1.min.js"></script>
+	</head>
+	<body>
+		<div id="chatbox">
+			<form action="#" method="POST" class="chat">
+				<p>Бота 01</p>
+				<div class="chatarea">
+					<div>
+						<p>aslsajaslas</p>
+					</div>
+					<div>
+						<p>aslsajaslas</p>
+					</div>
+				</div>
+				<fieldset>
+					<textarea placeholder="Вашето съобщение"></textarea>
+					<input type="submit" name="send" value="&#xe629;">
+				</fieldset>
+			</form>
+			<button>&#xe668;</button>
+		</div>
+		<nav>
+			<ul>
+				<li>
+					<a href="index.html" class="active">Начало</a>
+				</li>
+				<li>
+					<a href="#">Меню</a>
+				</li>
+				<li>
+					<a href="pages/login.html" class="active">Вход/Регистрация</a>
+				</li>
+			</ul>
+		</nav>
+		<header>
+			<div>
+				<h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h1>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi auctor tincidunt diam, id gravida purus interdum at. Maecenas ac fermentum odio. Donec ornare in neque eget auctor. Sed blandit vel nunc a elementum.
+				</p>
+				<p>
+					<a href="#">Поръчай пица</a>
+					<a href="#">Разгледай менюто</a>
+				</p>
+			</div>
+		</header>
+		<div class="wrapper">
+			<section class="boxes">
+				<!-- First Box -->
+				<div class="half-box">
+					<h2>Пица на деня</h2>
+				</div>
+				<!-- Second Box -->
+				<div class="half-box">
+					<h2>Препоръчано за вас</h2>
+				</div>
+				<!-- Promo Box -->
+				<div class="full-box">
+					<h2>Нашата промоция</h2>
+				</div>
+			</section>
+			<section class="menu">
+				<div>
+					<span class="price-tag">
+						<span>11<span>,99</span></span>
+						<span>лв.</span>
+					</span>
+					<div></div>
+					<p>Item 1</p>
+				</div>
+				<div>
+					<span class="price-tag">
+						<span>10<span>,99</span></span>
+						<span>лв.</span>
+					</span>
+					<div></div>
+					<p>Item 1</p>
+				</div>
+				<div>
+					<span class="price-tag">
+						<span>20<span>,99</span></span>
+						<span>лв.</span>
+					</span>
+					<div></div>
+					<p>Item 1</p>
+				</div>
+				<div>
+					<span class="price-tag">
+						<span>9<span>,99</span></span>
+						<span>лв.</span>
+					</span>
+					<div></div>
+					<p>Item 1</p>
+				</div>
+				<div>
+					<span class="price-tag">
+						<span>5<span>,99</span></span>
+						<span>лв.</span>
+					</span>
+					<div></div>
+					<p>Item 1</p>
+				</div>
+				<div>
+					<span class="price-tag">
+						<span>6<span>,99</span></span>
+						<span>лв.</span>
+					</span>
+					<div></div>
+					<p>Item 1</p>
+				</div>
+			</section>
+		</div>
+		<footer>
+			<p>Всички права запазени!</p>
+		</footer>
+		<script>
+			var chat = $("#chatbox > form"),
+				hidden = true;
+			
+			$("#chatbox > button").on("click", function(){
+				if(!hidden){
+					chat.animate({marginBottom: "70", opacity: 0}, function(){
+						hidden = true;
+					});
+				}else{
+					chat.animate({marginBottom: "20", opacity: 1}, function(){
+						hidden = false;
+					});
+				}
+			});
+		</script>
+	</body>
+</html>
