@@ -1,2 +1,2 @@
 # VoiceRecognition
-A project attempting to simulate speech recognition and speech understanding.
+A project attempting to simulate speech recognition, speech understanding and other functionalities...
