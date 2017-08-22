@@ -1,2 +1,2 @@
-# VoiceRecognition
-A project attempting to simulate speech recognition and speech understanding.
+# PizzaBot
+A project attempting to simulate an online pizza purchase and delivery system.
